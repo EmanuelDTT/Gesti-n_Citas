@@ -46,7 +46,7 @@ public class Clase_Empleado {
         this.Usuario = Usuario;
     }
     
-           public void LlenarComboEmp(JComboBox<Clase_Empleado>ComboEmp){
+        public void LlenarComboEmp(JComboBox<Clase_Empleado>ComboEmp){
         
         conexion con= new conexion();
         Connection cn= con.conexion();

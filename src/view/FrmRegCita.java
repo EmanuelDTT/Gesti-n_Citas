@@ -6,6 +6,14 @@ import model.Clase_Empleado;
 import model.Clase_Medico;
 import model.Clase_Paciente;
 
+//Importaciones SQL
+import model.conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class FrmRegCita extends javax.swing.JInternalFrame {
 
@@ -31,7 +39,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        Estado = new javax.swing.ButtonGroup();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -47,16 +55,16 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
         ComboPaciente = new javax.swing.JComboBox<>();
         ComboEmp = new javax.swing.JComboBox<>();
         ComboConsultorio = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        BtnAtendida = new javax.swing.JRadioButton();
+        btnAsignada = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtOb = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         btnSalir = new javax.swing.JButton();
         btndarAltar = new javax.swing.JButton();
         btnReprogramar = new javax.swing.JButton();
-        rSLabelFecha1 = new rojeru_san.RSLabelFecha();
-        rSLabelHora1 = new rojeru_san.RSLabelHora();
+        LblFecha = new rojeru_san.RSLabelFecha();
+        LblHora = new rojeru_san.RSLabelHora();
         jLabel9 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -122,13 +130,25 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Estado:");
 
-        jRadioButton1.setText("Atendida");
+        Estado.add(BtnAtendida);
+        BtnAtendida.setText("Atendida");
+        BtnAtendida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAtendidaActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Asignada");
+        Estado.add(btnAsignada);
+        btnAsignada.setText("Asignada");
+        btnAsignada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsignadaActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtOb.setColumns(20);
+        txtOb.setRows(5);
+        jScrollPane1.setViewportView(txtOb);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -157,9 +177,9 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2))
+                        .addComponent(BtnAtendida)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAsignada))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -188,8 +208,8 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(BtnAtendida)
+                    .addComponent(btnAsignada))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -256,9 +276,10 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                 .addGap(26, 26, 26))
         );
 
-        rSLabelFecha1.setForeground(new java.awt.Color(255, 255, 255));
+        LblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        LblFecha.setFormato("YYYY/MM/dd");
 
-        rSLabelHora1.setForeground(new java.awt.Color(255, 255, 255));
+        LblHora.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -275,8 +296,8 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(38, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -295,9 +316,9 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                         .addGap(0, 27, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(rSLabelHora1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSLabelFecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -317,23 +338,71 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btndarAltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndarAltarActionPerformed
-        // TODO add your handling code here:
+     
+        String Paciente;
+        Paciente=ComboPaciente.getItemAt(ComboPaciente.getSelectedIndex()).getIdpac();
+        String Medico;
+        Medico=ComboMedico.getItemAt(ComboMedico.getSelectedIndex()).getIdMedico();
+        String Empleado;
+        Empleado=ComboEmp.getItemAt(ComboEmp.getSelectedIndex()).getIdEmp();
+        String Consultorio;
+        Consultorio=ComboConsultorio.getItemAt(ComboConsultorio.getSelectedIndex()).getIdCon();
+        
+        
+        conexion con=new conexion ();
+        Connection cn=con.conexion();
+        
+        try{
+        PreparedStatement pps=cn.prepareStatement("INSERT INTO citas (CitFecha,CitHora,"
+                + "CitEstado,CitObservacion,IDPAC,IDMEC,IDEMPLE,IDCONSUL)VALUES(?,?,?,?,?,?,?,?)");
+        
+        pps.setString(1,LblFecha.getFecha());
+        pps.setString(2,LblHora.getHora());
+        pps.setString(3,estado);
+        pps.setString(4, txtOb.getText());
+        pps.setString(5, Paciente);
+        pps.setString(6,Medico);
+        pps.setString(7,Empleado);
+        pps.setString(8, Consultorio);
+        
+        pps.executeUpdate();
+        JOptionPane.showMessageDialog(null, "La cita ha sido asignada");
+        }catch(SQLException ex){
+        
+             Logger.getLogger(FrmRegistro_Paciente.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
+        
     }//GEN-LAST:event_btndarAltarActionPerformed
 
     private void btnReprogramarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReprogramarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReprogramarActionPerformed
 
+    private void BtnAtendidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtendidaActionPerformed
+       
+        estado="Atendida";
+        
+    }//GEN-LAST:event_BtnAtendidaActionPerformed
+
+    private void btnAsignadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignadaActionPerformed
+       estado="Asignada";
+    }//GEN-LAST:event_btnAsignadaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton BtnAtendida;
     private javax.swing.JComboBox<Clase_Consultorio> ComboConsultorio;
     private javax.swing.JComboBox<Clase_Empleado> ComboEmp;
     private javax.swing.JComboBox<Clase_Medico> ComboMedico;
     private javax.swing.JComboBox<Clase_Paciente> ComboPaciente;
+    private javax.swing.ButtonGroup Estado;
+    private rojeru_san.RSLabelFecha LblFecha;
+    private rojeru_san.RSLabelHora LblHora;
+    private javax.swing.JRadioButton btnAsignada;
     private javax.swing.JButton btnReprogramar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btndarAltar;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -347,11 +416,10 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private rojeru_san.RSLabelFecha rSLabelFecha1;
-    private rojeru_san.RSLabelHora rSLabelHora1;
+    private javax.swing.JTextArea txtOb;
     // End of variables declaration//GEN-END:variables
+
+    private String estado;
 }
+

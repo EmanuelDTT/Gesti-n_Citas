@@ -42,7 +42,7 @@ ConNombre varchar (40) not null
 
 
 create table Citas (
-IdCitas Int  primary key unique,
+IdCitas Int  primary key unique auto_increment,
 CitFecha date not null,
 CitHora Time,
 CitEstado Enum("Asiganada", "Atendida", "no asigando"),
@@ -56,3 +56,5 @@ foreign key fk2 (IDMEC) references Medico (IdMedico),
 foreign key fk3 (IDEMPLE) references Empleado (IdEmpleado),
 foreign key fk4 (IDCONSUL) references Consultorio (IdConsultorio)
 );
+
+alter table Citas modify CitHora varchar(50) not null;
