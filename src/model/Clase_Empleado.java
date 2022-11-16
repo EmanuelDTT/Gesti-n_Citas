@@ -16,4 +16,9 @@ import javax.swing.JComboBox;
 
 public class Clase_Empleado {
     
+    private String IdEmp;
+    private String Usuario;
+    
+    
+    
 }
