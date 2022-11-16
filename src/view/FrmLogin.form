@@ -197,8 +197,9 @@
         </Container>
         <Component class="javax.swing.JLabel" name="background">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Sena ADSO\Java proyecto\HospitalCitas\src\IMG\img2.jpg"/>
+              <Image iconType="2" name="C:\Users\SENA\Desktop\ARCHIVOS OTRO GRUPO\Visual\Java\HospitalCitas\src\IMG\img2.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>

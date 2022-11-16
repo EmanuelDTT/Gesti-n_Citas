@@ -2,6 +2,7 @@
 package view;
 
 import model.Clase_Consultorio;
+import model.Clase_Empleado;
 import model.Clase_Medico;
 import model.Clase_Paciente;
 
@@ -20,6 +21,8 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
           Clase_Consultorio Con= new Clase_Consultorio();
          Con.LlenarComboConsultorio(ComboConsultorio);
          
+          Clase_Empleado Emp= new Clase_Empleado();
+           Emp.LlenarComboEmp(ComboEmp);
        
     }
 
@@ -42,7 +45,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         ComboMedico = new javax.swing.JComboBox<>();
         ComboPaciente = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        ComboEmp = new javax.swing.JComboBox<>();
         ComboConsultorio = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -139,7 +142,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ComboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,7 +184,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ComboEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,7 +261,6 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
         rSLabelHora1.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon("D:\\Sena ADSO\\Java proyecto\\HospitalCitas\\src\\IMG\\revision-medica (1).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -325,6 +327,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<Clase_Consultorio> ComboConsultorio;
+    private javax.swing.JComboBox<Clase_Empleado> ComboEmp;
     private javax.swing.JComboBox<Clase_Medico> ComboMedico;
     private javax.swing.JComboBox<Clase_Paciente> ComboPaciente;
     private javax.swing.JButton btnReprogramar;
@@ -332,7 +335,6 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
     private javax.swing.JButton btndarAltar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
