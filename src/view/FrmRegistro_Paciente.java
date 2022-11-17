@@ -175,6 +175,8 @@ public class FrmRegistro_Paciente extends javax.swing.JInternalFrame {
         btnEliminar.setEnabled(false);
         V.ValidarSoloLetras(txtNombrePaciente);
         V.ValidarSoloLetras(txtApellidosPaciente);
+        V.ValidarSoloNumeros(txtIdenPaciente);
+        
     }
 
    
@@ -689,10 +691,10 @@ public class FrmRegistro_Paciente extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTPacientes;
     private javax.swing.JRadioButton rdPacienteF;
     private javax.swing.JRadioButton rdPacienteM;
-    private javax.swing.JTextField txtApellidosPaciente;
+    public javax.swing.JTextField txtApellidosPaciente;
     private javax.swing.JLabel txtIdPaciente;
     private javax.swing.JTextField txtIdenPaciente;
-    private javax.swing.JTextField txtNombrePaciente;
+    public javax.swing.JTextField txtNombrePaciente;
     // End of variables declaration//GEN-END:variables
     private String sexo; 
 }

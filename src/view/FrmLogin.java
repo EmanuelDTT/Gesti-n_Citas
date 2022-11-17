@@ -119,6 +119,8 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Usuario ");
 
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\Gestion Cita ADSO 2\\Gesti-n_Citas\\src\\IMG\\usuario.png")); // NOI18N
+
         btnIniciar.setBackground(new java.awt.Color(0, 204, 204));
         btnIniciar.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         btnIniciar.setText("Iniciar");
@@ -182,7 +184,7 @@ public class FrmLogin extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 440, 260));
 
         background.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\ARCHIVOS OTRO GRUPO\\Visual\\Java\\HospitalCitas\\src\\IMG\\img2.jpg")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\Gestion Cita ADSO 2\\Gesti-n_Citas\\src\\IMG\\img2.jpg")); // NOI18N
         background.setText("jLabel2");
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 610));
 

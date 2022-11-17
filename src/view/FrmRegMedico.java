@@ -35,6 +35,7 @@ import java.sql.Statement;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import model.Validacion;
 
 public class FrmRegMedico extends javax.swing.JInternalFrame {
     
@@ -159,6 +160,7 @@ public class FrmRegMedico extends javax.swing.JInternalFrame {
      
      }
      
+     Validacion V = new Validacion();
      
      
     public FrmRegMedico() {
@@ -168,6 +170,11 @@ public class FrmRegMedico extends javax.swing.JInternalFrame {
          btnEliminar.setEnabled(false);
         MostrarMedico();
         ajustarColumnas();
+        
+        V.ValidarSoloNumeros(txtIdenMedico);
+        V.ValidarSoloLetras(txtNombreMedico);
+        V.ValidarSoloLetras(txtApellidosMedico);
+        V.ValidarSoloNumeros(txtTelefonoMedico);
     }
 
     

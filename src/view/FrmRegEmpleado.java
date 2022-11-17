@@ -28,6 +28,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import model.Validacion;
 
 
 
@@ -153,6 +154,8 @@ public class FrmRegEmpleado extends javax.swing.JInternalFrame {
     
     }
     
+    Validacion V =new Validacion();
+    
     public FrmRegEmpleado() {
         
         
@@ -162,6 +165,12 @@ public class FrmRegEmpleado extends javax.swing.JInternalFrame {
         btnActualizarEmp.setEnabled(false);
         btnEliminar.setEnabled(false);
         txtIdEmp.setVisible(true);
+        
+        V.ValidarSoloLetras(txtNombreEmpleado);
+        V.ValidarSoloLetras(txtApellidosEmpleado);
+        V.ValidarSoloLetras(txtUsuarioEmpleado);
+        V.ValidarSoloNumeros(txtIdenEmpleado);
+        
     }
 
     /**

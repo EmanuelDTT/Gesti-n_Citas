@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/FrmModerador.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/FrmRegistro_Paciente.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/prueba.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/FrmRegEmpleado.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/FrmRegConsultorio.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/FrmLogin.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/view/FrmRegMedico.java</file>
-            <file>file:/C:/Users/SENA/Desktop/ARCHIVOS%20OTRO%20GRUPO/Visual/Java/HospitalCitas/src/model/conexion.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/model/Validacion.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/FrmRegConsultorio.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/Base_de_Datos/GestionDeCitas.sql</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/FrmRegistro_Paciente.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/FrmLogin.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/model/conexion.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/FrmContra.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/FrmRegCita.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/prueba.java</file>
+            <file>file:/C:/Users/SENA/Desktop/Gestion%20Cita%20ADSO%202/Gesti-n_Citas/src/view/FrmModerador.java</file>
         </group>
     </open-files>
 </project-private>

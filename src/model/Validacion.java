@@ -9,22 +9,38 @@ import javax.swing.JTextField;
 
 public class Validacion {
     
-    public void ValidarSoloLetras(JTextField Campo){
-    
-    Campo.addKeyListener(new KeyAdapter(){
-        public void  KeyTyped(KeyEvent e){
-            
-            char c=e.getKeyChar();
-            if (Character.isDigit(c)) {
-                e.consume();
-                 JOptionPane.showMessageDialog(null, "Recueda que solo debes digitar letras");
-            }else{
-            JOptionPane.showMessageDialog(null, "SADASDAS");
+        public void ValidarSoloLetras(JTextField Campo){
+        
+        Campo.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyTyped(KeyEvent e){
+                char c=e.getKeyChar();
+                if(Character.isDigit(c)){
+                    e.consume();
+                    JOptionPane.showMessageDialog(null,"Recuerda que solo debes Digitar Letras");
+                }
             }
-        }
-    
     });
-    
+           
     }
+
+
+     public void ValidarSoloNumeros(JTextField Campo){
+        
+        Campo.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyTyped(KeyEvent e){
+                char c=e.getKeyChar();
+                if(!Character.isDigit(c)){
+                    e.consume();
+                    JOptionPane.showMessageDialog(null,"Recuerda que solo debes Digitar Numeros");
+                }
+            }
+    });
+           
+    } 
+    
     
 }
+    
+

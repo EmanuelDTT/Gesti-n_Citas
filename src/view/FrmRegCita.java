@@ -69,6 +69,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        setClosable(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
@@ -219,7 +220,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 204, 153));
 
-        btnSalir.setBackground(new java.awt.Color(0, 204, 204));
+        btnSalir.setBackground(new java.awt.Color(0, 153, 153));
         btnSalir.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
@@ -230,7 +231,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
             }
         });
 
-        btndarAltar.setBackground(new java.awt.Color(0, 204, 204));
+        btndarAltar.setBackground(new java.awt.Color(0, 153, 153));
         btndarAltar.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         btndarAltar.setForeground(new java.awt.Color(255, 255, 255));
         btndarAltar.setText("Dar de alta");
@@ -241,7 +242,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
             }
         });
 
-        btnReprogramar.setBackground(new java.awt.Color(0, 204, 204));
+        btnReprogramar.setBackground(new java.awt.Color(0, 153, 153));
         btnReprogramar.setFont(new java.awt.Font("Candara", 1, 12)); // NOI18N
         btnReprogramar.setForeground(new java.awt.Color(255, 255, 255));
         btnReprogramar.setText("Reprogramar");
@@ -282,6 +283,7 @@ public class FrmRegCita extends javax.swing.JInternalFrame {
         LblHora.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\SENA\\Desktop\\Gestion Cita ADSO 2\\Gesti-n_Citas\\src\\IMG\\revision-medica (1).png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
